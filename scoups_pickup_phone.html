@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#11131b">
+<title>捡到崔胜澈的手机 · S.COUPS Phone</title>
+<style>
+:root{--bg:#10121a;--panel:#1b1e29;--panel2:#252938;--text:#f7f7fb;--muted:#a4a8b8;--pink:#ffb7c9;--blue:#a8c7ff;--line:#ffffff18}
+*{box-sizing:border-box} body{margin:0;background:#080910;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:14px}
+.phone{width:min(100%,410px);height:min(880px,calc(100dvh - 28px));min-height:610px;border:1px solid #ffffff30;border-radius:38px;overflow:hidden;position:relative;background:linear-gradient(155deg,#303343,#11131b 45%);box-shadow:0 25px 90px #000b;display:flex;flex-direction:column}
+.status{height:35px;flex-shrink:0;padding:11px 24px 0;display:flex;justify-content:space-between;font-size:12px;font-weight:700;position:relative;z-index:3}
+.dynamic{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:90px;height:22px;background:#050507;border-radius:18px}
+.topbar{height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid var(--line);flex-shrink:0}
+.topbar h1{font-size:16px;margin:0;font-weight:700;letter-spacing:.2px}.topbar button{border:0;background:none;color:var(--text);font-size:23px;padding:4px 8px;cursor:pointer}
+.screen{flex:1;overflow:auto;padding:18px 17px 22px;scrollbar-width:none}.screen::-webkit-scrollbar{display:none}
+.home-screen{background:linear-gradient(180deg,#22283b55,#0d101b55),radial-gradient(ellipse at 50% 0%,#6d789d 0%,transparent 55%)}
+.date{text-align:center;color:#ffffffc9;font-size:13px;margin:9px 0 3px}.clock{text-align:center;font-size:61px;letter-spacing:-3px;font-weight:250;line-height:1.15}.weather{text-align:center;font-size:12px;color:#e6e8f2;margin:4px 0 24px}
+.widget{background:#161a28c9;border:1px solid #ffffff1c;border-radius:20px;padding:13px 15px;margin-bottom:19px;backdrop-filter:blur(12px)}
+.widget-head{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:10px}.now-playing{display:flex;align-items:center;gap:12px}.cover{width:48px;height:48px;border-radius:12px;background:linear-gradient(145deg,#e9a6b8,#36456b);display:grid;place-items:center;font-size:24px}.song{font-size:13px;font-weight:700}.sub{font-size:11px;color:var(--muted);margin-top:4px}
+.app-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px 8px;margin-top:4px}
+.app{border:0;background:transparent;color:var(--text);display:flex;flex-direction:column;align-items:center;gap:7px;font-size:11px;cursor:pointer;min-width:0}
+.app-icon{width:55px;height:55px;border-radius:17px;display:grid;place-items:center;font-size:27px;box-shadow:0 5px 14px #0004;position:relative}
+.app-icon small{position:absolute;right:-4px;top:-4px;background:#ff5369;border:2px solid #24283a;border-radius:12px;padding:1px 5px;font-size:9px;font-weight:700}
+.kakao{background:#fee500;color:#3c3211}.photos{background:linear-gradient(135deg,#f4a7bd,#ffd77b,#8bc7ff,#c2a8f8)}.notes{background:#f6e9a7;color:#5a4a21}.music{background:linear-gradient(135deg,#f18fb0,#735ee8)}.phoneapp{background:#56cf8d}.calendar{background:#f7f7f7;color:#ef4d5e}.camera{background:linear-gradient(135deg,#414958,#151821)}.memo{background:#9fc7ff;color:#17305a}.insta{background:linear-gradient(135deg,#7557e8,#f54d88,#ffb05e)}.settings{background:#bfc5d1;color:#343b49}.mail{background:#7fbaff}.clockapp{background:#262a35}.dock{margin-top:20px;padding:12px 14px;border-radius:25px;background:#ffffff1c;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;backdrop-filter:blur(14px)}
+.dock .app-icon{width:49px;height:49px;border-radius:15px}.dock .app{font-size:0;gap:0}
+.home-indicator{height:22px;display:grid;place-items:center;flex-shrink:0}.home-indicator span{width:108px;height:4px;border-radius:8px;background:#ffffffd9}
+.list-item{display:flex;gap:12px;align-items:center;padding:13px 2px;border-bottom:1px solid var(--line);cursor:pointer}.avatar{width:45px;height:45px;border-radius:50%;background:linear-gradient(135deg,#f2b8c9,#525e86);display:grid;place-items:center;font-weight:700;flex-shrink:0;color:#262335}.item-main{flex:1;min-width:0}.item-title{font-size:14px;font-weight:650}.item-preview{font-size:12px;color:var(--muted);margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.time{font-size:10px;color:var(--muted);align-self:flex-start}
+.chat{display:flex;flex-direction:column;gap:12px}.chat-date{text-align:center;color:var(--muted);font-size:10px;margin:5px 0 7px}.bubble-row{display:flex;gap:7px;align-items:flex-start;max-width:90%}.bubble-row.me{align-self:flex-end;flex-direction:row-reverse}.bubble-name{font-size:10px;color:var(--muted);margin:0 0 4px 2px}.bubble{background:#2b3040;padding:10px 12px;border-radius:5px 15px 15px 15px;font-size:13px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}.me .bubble{background:#f9e69b;color:#332d1b;border-radius:15px 5px 15px 15px}.bubble-time{font-size:9px;color:var(--muted);align-self:flex-end;margin-bottom:2px}.chat-input{display:flex;gap:8px;margin-top:17px;position:sticky;bottom:-22px;padding:12px 0 2px;background:#11131b}.chat-input input{flex:1;min-width:0;background:#252938;border:1px solid var(--line);border-radius:20px;padding:11px 14px;color:white;font-size:13px}.chat-input button,.pill{border:0;border-radius:18px;padding:9px 13px;background:var(--pink);color:#37212a;font-weight:700;cursor:pointer}
+.card{background:#202433;border:1px solid var(--line);border-radius:18px;padding:15px;margin:10px 0}.card h3{margin:0 0 8px;font-size:14px}.card p{margin:0;color:#d1d4df;font-size:12px;line-height:1.65}.tag{display:inline-block;font-size:10px;color:#ffd4df;background:#ffb7c91b;border:1px solid #ffb7c944;border-radius:20px;padding:4px 8px;margin:3px 4px 3px 0}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}.photo{aspect-ratio:1;background:linear-gradient(145deg,#d7b0bd,#697999 60%,#222a42);border-radius:8px;display:flex;align-items:flex-end;padding:7px;font-size:10px;color:#fff;text-shadow:0 1px 4px #000;cursor:pointer;overflow:hidden}.photo:nth-child(3n+2){background:linear-gradient(145deg,#dfc8a1,#66758f,#222a42)}.photo:nth-child(3n){background:linear-gradient(145deg,#2e3448,#ad8fa7,#e6b9bf)}
+.note-paper{background:#f6e9a7;color:#433b25;border-radius:12px;padding:18px;font-size:13px;line-height:1.8;white-space:pre-wrap;min-height:160px}.muted{color:var(--muted);font-size:12px;line-height:1.7}.backlink{border:0;background:none;color:var(--pink);padding:0 0 12px;font-size:13px;cursor:pointer}.section-title{font-size:12px;color:var(--muted);margin:18px 0 8px}.call-screen{text-align:center;padding-top:45px}.call-avatar{width:104px;height:104px;border-radius:50%;background:linear-gradient(135deg,#edc3cf,#4e5b82);display:grid;place-items:center;font-size:39px;margin:0 auto 18px}.call-actions{display:flex;justify-content:center;gap:35px;margin-top:80px}.call-actions button{border:0;border-radius:50%;width:58px;height:58px;font-size:23px;background:#3d4354;color:white}.call-actions button.end{background:#f05a65}
+.toast{position:absolute;top:62px;left:50%;transform:translateX(-50%);z-index:5;background:#f7f7f7;color:#24242a;border-radius:18px;padding:10px 15px;font-size:12px;box-shadow:0 5px 25px #0005;max-width:88%;display:none}
+@media(max-height:700px){.phone{height:calc(100dvh - 12px);min-height:0;border-radius:28px}.clock{font-size:47px}.widget{margin-bottom:12px}.app-grid{gap:12px 8px}.app-icon{width:49px;height:49px}.screen{padding-top:12px}}
+</style>
+</head>
+<body>
+<div class="phone" id="phone">
+  <div class="status"><span id="statusTime">9:41</span><div class="dynamic"></div><span>▮▮▮　 Wi-Fi　▰</span></div>
+  <div class="topbar"><button id="backBtn" aria-label="返回" style="visibility:hidden">‹</button><h1 id="screenTitle">S.COUPS · 手机</h1><button id="topAction" aria-label="更多">···</button></div>
+  <div class="toast" id="toast"></div>
+  <main class="screen home-screen" id="screen"></main>
+  <div class="home-indicator"><span></span></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+let current='home', stack=[], activeChat='scoups', sentMessages={};
+const chats={
+ scoups:{name:'小狗🐶',avatar:'🍒',preview:'到家跟我说，宝宝。',time:'刚刚',messages:[
+  ['date','昨天 23:18'],
+  ['them','崔胜澈','宝宝，睡了吗？','23:18'],
+  ['me','你','还没，在等你下班。','23:19'],
+  ['them','崔胜澈','不是说了困了就先睡吗。','23:19'],
+  ['them','崔胜澈','……但我现在也想听你说话。','23:20'],
+  ['me','你','澈哩今天是不是又没好好吃饭？','23:20'],
+  ['them','崔胜澈','吃了。','23:20'],
+  ['them','崔胜澈','（三秒后）吃了半个三明治也算吃吧。','23:20'],
+  ['me','你','崔胜澈！！','23:21'],
+  ['them','崔胜澈','知道了知道了，明天认真吃。不要生气ㅠㅠ','23:21'],
+  ['them','崔胜澈','明天想吃什么？我去接你。','23:22'],
+  ['date','今天 08:12'],
+  ['them','崔胜澈','醒了没，小狗来报到了。','08:12'],
+  ['them','崔胜澈','今天行程结束得晚，不要等我。到家给我发消息。','08:13']
+ ]},
+ mingyu:{name:'金珉奎',avatar:'🐶',preview:'哥，你是不是又把帽子落我车上了',time:'08:47',messages:[
+ ['date','今天 08:41'],['them','金珉奎','哥，你是不是又把帽子落我车上了？','08:41'],['them','崔胜澈','哪顶。','08:42'],['them','金珉奎','黑色的，旁边还夹着一张拍立得。','08:42'],['them','崔胜澈','拍立得别看。','08:42'],['them','金珉奎','……哦？','08:43'],['them','金珉奎','等一下。这个女生是谁。','08:43'],['them','崔胜澈','你今天不想活了是吧。','08:44'],['them','金珉奎','哈哈哈哈哈哈哈哈哈哈哈哈','08:44'],['them','金珉奎','放心哥，我什么都没看清。就看到你笑得像个傻子。','08:47']
+ ]},
+ jeonghan:{name:'尹净汉',avatar:'😇',preview:'恋爱中的人真的很吵',time:'昨天',messages:[
+ ['date','昨天 21:06'],['them','尹净汉','胜澈呀。','21:06'],['them','崔胜澈','干嘛。','21:06'],['them','尹净汉','你今天看手机笑了十七次。','21:07'],['them','崔胜澈','有吗？','21:07'],['them','尹净汉','现在第十八次。','21:07'],['them','崔胜澈','哥真的很闲。','21:08'],['them','尹净汉','嗯，我很闲。所以你女朋友是谁？','21:08'],['them','崔胜澈','……','21:09'],['them','崔胜澈','你怎么知道的？','21:09'],['them','尹净汉','呀，真的有啊？','21:09']
+ ]},
+ svtgroup:{name:'SEVENTEEN 🏠',avatar:'💎',preview:'李硕珉：谁把辣酱放冰箱了',time:'昨天',messages:[
+ ['date','今天 00:03'],['them','李硕珉','谁把辣酱放冰箱了ㅋㅋㅋㅋ','00:03'],['them','夫胜宽','那不是本来就应该放冰箱吗？','00:04'],['them','李硕珉','不是，我说的是冰冻层。它现在是冰块。','00:04'],['them','权顺荣','辣酱：我只是想冷静一下。','00:05'],['them','金珉奎','哈哈哈哈哈哈哈哈哈哈','00:05'],['them','尹净汉','崔胜澈呢？今天怎么这么安静。','00:06'],['them','崔胜澈','在忙。','00:06'],['them','夫胜宽','忙着跟谁聊天呢？','00:06'],['them','崔胜澈','夫胜宽，你最近话很多。','00:07'],['them','夫胜宽','哦莫？被我说中了？','00:07'],['them','崔胜澈','睡觉。都睡觉。','00:08']
+ ]},
+ manager:{name:'经纪人',avatar:'📋',preview:'明天出门记得戴口罩',time:'昨天',messages:[
+ ['date','昨天 19:30'],['them','经纪人','明天上午十点出发，下午有拍摄。','19:30'],['them','崔胜澈','知道了。','19:31'],['them','经纪人','最近私下出门也注意一点，机场有粉丝。','19:31'],['them','崔胜澈','嗯。','19:32'],['them','经纪人','你最近状态不错。心情很好？','19:32'],['them','崔胜澈','有吗。','19:33'],['them','经纪人','有。看起来像谈恋爱了。','19:33'],['them','崔胜澈','哥。','19:34'],['them','经纪人','好好好，我什么都没说。','19:34']
+ ]}
+};
+const apps=[
+ ['kakao','💬','KakaoTalk','kakao',3],['photos','🌈','照片','photos'],['notes','📝','备忘录','notes'],['music','♫','音乐','music'],
+ ['phoneapp','☎','电话','phone'],['calendar','24','日历','calendar'],['camera','📷','相机','camera'],['memo','📍','地图','maps'],
+ ['insta','◎','Instagram','insta'],['mail','✉','邮件','mail'],['clockapp','◷','时钟','clock'],['settings','⚙','设置','settings']
+];
+function appButton(a){return `<button class="app" onclick="openApp('${a[3]}')"><span class="app-icon ${a[0]}">${a[1]}${a[4]?`<small>${a[4]}</small>`:''}</span><span>${a[2]}</span></button>`}
+function home(){ $('screenTitle').textContent='S.COUPS · 手机'; $('backBtn').style.visibility='hidden'; $('topAction').textContent='···'; $('screen').className='screen home-screen'; $('screen').innerHTML=`
+ <div class="date">星期六，10月24日</div><div class="clock" id="clock">09:41</div><div class="weather">☁  首尔  16°　 ·　有一点想你</div>
+ <div class="widget"><div class="widget-head"><span>正在播放</span><span>♫</span></div><div class="now-playing"><div class="cover">🎧</div><div><div class="song">청소 · The Ray</div><div class="sub">最近播放 · 可能因为某个人</div></div><div style="margin-left:auto;font-size:18px">Ⅱ</div></div></div>
+ <div class="app-grid">${apps.map(appButton).join('')}</div>
+ <div class="dock">${appButton(['kakao','💬','KakaoTalk','kakao',3])}${appButton(['phoneapp','☎','电话','phone'])}${appButton(['photos','🌈','照片','photos'])}${appButton(['music','♫','音乐','music'])}</div>
+ <div style="text-align:center;font-size:10px;color:#ffffff70;margin-top:13px">如果你捡到了这部手机……别乱看。真的。 — 崔胜澈</div>`; current='home';}
+function setScreen(title,html){$('screenTitle').textContent=title;$('backBtn').style.visibility='visible';$('topAction').textContent='···';$('screen').className='screen';$('screen').innerHTML=html;}
+function openApp(app){
+ stack.push(current);current=app;
+ if(app==='kakao') return renderChats();
+ if(app==='photos') return renderPhotos();
+ if(app==='notes') return renderNotes();
+ if(app==='phone') return renderPhone();
+ if(app==='calendar') return renderCalendar();
+ if(app==='camera') return renderCamera();
+ if(app==='maps') return renderMaps();
+ if(app==='insta') return renderInsta();
+ if(app==='mail') return renderMail();
+ if(app==='clock') return renderClock();
+ if(app==='settings') return renderSettings();
+ if(app==='music') return renderMusic();
+}
+function renderChats(){setScreen('KakaoTalk','<div style="display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:23px;font-weight:800">채팅</div><div class="muted">聊天 · 仅供故事体验</div></div><span style="font-size:22px">⌕　＋</span></div>'+Object.keys(chats).map(k=>{let c=chats[k];let last=c.messages.filter(m=>m[0]!=='date').slice(-1)[0];return `<div class="list-item" onclick="openChat('${k}')"><div class="avatar">${c.avatar}</div><div class="item-main"><div class="item-title">${c.name}</div><div class="item-preview">${last?last[2]:c.preview}</div></div><div class="time">${c.time}</div></div>`}).join('')+'<div class="card"><p>🔒 这是一部虚构的故事手机。点击对话，看看他不小心留下了什么。</p></div>');}
+function openChat(k){stack.push(current);activeChat=k;renderChat(k)}
+function renderChat(k){current='chat';let c=chats[k];let msgs=[...c.messages,...(sentMessages[k]||[])];setScreen(c.name,`<button class="backlink" onclick="renderChats()">‹ 所有聊天</button><div class="chat">${msgs.map(m=>m[0]==='date'?`<div class="chat-date">${m[1]}</div>`:`<div class="bubble-row ${m[0]==='me'?'me':''}">${m[0]==='them'?`<div class="avatar" style="width:28px;height:28px;font-size:13px">${c.avatar}</div>`:''}<div>${m[0]==='them'?`<div class="bubble-name">${m[1]}</div>`:''}<div class="bubble">${escapeHtml(m[2])}</div></div><div class="bubble-time">${m[3]||'现在'}</div></div>`).join('')}</div><div class="chat-input"><input id="msgInput" placeholder="给 ${c.name} 留一句话…" maxlength="120"><button onclick="sendMsg('${k}')">发送</button></div>`);}
+function sendMsg(k){let el=$('msgInput');if(!el||!el.value.trim())return;let t=el.value.trim();sentMessages[k]=sentMessages[k]||[];sentMessages[k].push(['me','你',t,'现在']);renderChat(k);toast('消息留在这部虚构手机里啦');}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function renderPhotos(){setScreen('照片','<div style="font-size:23px;font-weight:800;margin-bottom:5px">最近项目</div><div class="muted">全部照片 · 186 张</div><div class="section-title">最近拍摄 · 10月</div><div class="photo-grid">'+[['一张没发出去的合照','📷'],['练习室镜子自拍','🪞'],['晚饭：猪排','🍽'],['kkuma睡着了','🐶'],['窗边的夕阳','🌇'],['她落在车上的发夹','🎀'],['演出后台','🎤'],['模糊的手牵手','🤍'],['便利店草莓牛奶','🍓']].map((p,i)=>`<div class="photo" onclick="photoDetail(${i})">${p[1]}<br>${p[0]}</div>`).join('')+'</div><div class="card"><h3>隐藏相簿 🔒</h3><p>需要面容 ID。某个人的照片，当然不能随便给别人看。</p><button class="pill" style="margin-top:12px" onclick="toast('Face ID：只有崔胜澈本人可以解锁')">尝试解锁</button></div>');}
+function photoDetail(i){let texts=['这张其实拍了七次。她说最后一张最好看。','练习结束后拍的。头发很乱，但今天心情很好。','她说这家猪排不错。下次还想一起去。','kkuma今天也很想她。','想把今天的天空发给她。','她忘记带走的。先替她收好了。','工作的时候也要认真。结束后就去找她。','没有发出去。等以后可以公开的时候再说吧。','她喜欢的草莓牛奶。冰箱里还剩两瓶。'];setScreen('照片详情',`<button class="backlink" onclick="renderPhotos()">‹ 所有照片</button><div class="photo" style="aspect-ratio:4/5;font-size:14px;justify-content:center;align-items:center;text-align:center">${['📷','🪞','🍽','🐶','🌇','🎀','🎤','🤍','🍓'][i]}<br>私人相册 · ${i+1}/9</div><div class="card"><p>${texts[i]}</p></div><button class="pill" onclick="toast('已加入收藏')">♡ 收藏</button>`);}
+function renderNotes(){setScreen('备忘录','<div style="font-size:23px;font-weight:800">备忘录</div><div class="muted">最近编辑 · 4条</div>'+[['给宝宝买的东西','草莓牛奶、暖宝宝、她说想吃的蛋糕。\\n还有那个小狗挂件，看到就觉得很像她。'],['不要忘记','1. 明天给她打电话\\n2. 记得吃饭，不要让她担心\\n3. 她说想看夜景\\n4. 休息日空出来，别再接工作了'],['如果被发现了','先确认她有没有被拍到。\\n不要让她因为我受到伤害。\\n如果她害怕，就按她的想法来。\\n我喜欢她，但不能只考虑自己。'],['她的生日礼物','项链？太普通。\\n拍立得？她应该会喜欢。\\n还是带她去她一直想去的地方。\\n\\n想让她那天只负责开心。']].map((n,i)=>`<div class="list-item" onclick="noteDetail(${i})"><div class="avatar" style="border-radius:10px;background:#f6e9a7;color:#5a4a21">📝</div><div class="item-main"><div class="item-title">${n[0]}</div><div class="item-preview">${n[1].split('\\n')[0]}</div></div><div class="time">昨天</div></div>`).join(''));}
+function noteDetail(i){let n=[['给宝宝买的东西','草莓牛奶、暖宝宝、她说想吃的蛋糕。\\n还有那个小狗挂件，看到就觉得很像她。'],['不要忘记','1. 明天给她打电话\\n2. 记得吃饭，不要让她担心\\n3. 她说想看夜景\\n4. 休息日空出来，别再接工作了'],['如果被发现了','先确认她有没有被拍到。\\n不要让她因为我受到伤害。\\n如果她害怕，就按她的想法来。\\n我喜欢她，但不能只考虑自己。'],['她的生日礼物','项链？太普通。\\n拍立得？她应该会喜欢。\\n还是带她去她一直想去的地方。\\n\\n想让她那天只负责开心。']][i];setScreen(n[0],`<button class="backlink" onclick="renderNotes()">‹ 备忘录</button><div class="note-paper">${n[1]}</div><div class="muted" style="margin-top:12px">最后编辑：昨天 23:51　·　崔胜澈的 iPhone</div>`);}
+function renderPhone(){setScreen('电话','<div class="call-screen"><div class="call-avatar">🍒</div><div style="font-size:23px;font-weight:750">最近通话</div><div class="muted">有一个未接来电来自「宝宝」</div></div><div class="list-item" onclick="callScreen(\'宝宝\')"><div class="avatar">♡</div><div class="item-main"><div class="item-title">宝宝 ♡</div><div class="item-preview">未接来电 · FaceTime 音频</div></div><div class="time">22:46</div></div><div class="list-item" onclick="callScreen(\'金珉奎\')"><div class="avatar">🐶</div><div class="item-main"><div class="item-title">金珉奎</div><div class="item-preview">通话 4分12秒</div></div><div class="time">18:32</div></div><div class="list-item" onclick="callScreen(\'尹净汉\')"><div class="avatar">😇</div><div class="item-main"><div class="item-title">尹净汉</div><div class="item-preview">通话 1分08秒</div></div><div class="time">昨天</div></div>');}
+function callScreen(name){setScreen('呼叫中',`<div class="call-screen"><div class="call-avatar">${name==='宝宝'?'♡':'🍒'}</div><div style="font-size:23px;font-weight:750">${name}</div><div class="muted" id="callStatus">正在呼叫…</div><div class="call-actions"><button onclick="toast('已静音')">🎙</button><button class="end" onclick="renderPhone()">✕</button><button onclick="toast('扬声器已打开')">🔊</button></div></div>`);}
+function renderCalendar(){setScreen('日历','<div style="font-size:23px;font-weight:800">2026年 10月</div><div class="muted">崔胜澈的日程</div><div class="card"><h3>24 · 星期六</h3><p>09:30　起床（闹钟响了三次）<br>10:00　个人行程<br>16:30　练习 / 录制<br>21:00　如果来得及，去见她<br>23:00　给她打电话，提醒她早点睡</p></div><div class="card"><h3>25 · 星期日</h3><p>上午　休息<br>下午　♡ 私人时间<br><span class="muted">备注：不要让任何人临时加工作。已经答应她了。</span></p></div><div class="card"><h3>30 · 星期五</h3><p>提醒：给宝宝买生日礼物。<br>地点先保密，想给她惊喜。</p></div>');}
+function renderCamera(){setScreen('相机','<div style="height:65%;min-height:300px;border-radius:22px;background:linear-gradient(150deg,#272c3e,#8790a8 48%,#d8bdc8 49%,#34394d);display:grid;place-items:center;font-size:45px">📷</div><div style="display:flex;justify-content:space-around;align-items:center;padding:24px 0"><span>◉</span><button class="pill" style="border-radius:50%;width:62px;height:62px;background:#fff;border:5px solid #aaa" onclick="toast('咔嚓！照片已存入相册（虚构）')"></button><span>↻</span></div><div class="muted" style="text-align:center">相机 · 点击快门试试</div>');}
+function renderMaps(){setScreen('地图','<div class="card"><h3>📍 最近搜索</h3><p>1. 汉江公园 · 夜景很漂亮<br>2. 她说好吃的猪排店<br>3. 草莓蛋糕店（周一休息）<br>4. 家 → 练习室：预计 28 分钟</p></div><div style="height:270px;border-radius:18px;background:linear-gradient(35deg,#252d3d,#394b52 40%,#283a40 41%,#384b55 60%,#242c3d);position:relative;overflow:hidden"><svg viewBox="0 0 320 260" style="width:100%;height:100%"><path d="M-10 190 Q50 150 90 175 T180 150 T330 120" stroke="#82b9d0" stroke-width="28" fill="none" opacity=".8"/><path d="M0 40 L320 225 M-10 230 L310 20 M60 0 L140 260 M250 0 L190 260" stroke="#a3b2a2" stroke-width="8" fill="none" opacity=".5"/><circle cx="155" cy="124" r="10" fill="#ffb7c9"/><text x="170" y="120" fill="white" font-size="12">想和她来的地方</text></svg></div><div class="muted" style="margin-top:12px">收藏地点：汉江边 · 「下次一定要带她来」</div>');}
+function renderInsta(){setScreen('Instagram','<div style="display:flex;justify-content:space-between;font-size:21px;font-weight:800;padding:8px 0 18px">Instagram <span>＋　♡</span></div><div class="card"><div style="display:flex;gap:10px;align-items:center"><div class="avatar">🍒</div><div><b>sound_of_coups</b><div class="muted">Seoul, Korea</div></div></div><div class="photo" style="aspect-ratio:1.05;margin-top:12px;justify-content:center;align-items:center;font-size:26px">🌆<br>模糊的汉江夜景</div><div style="margin:10px 0;font-size:19px">♡　♡　♡　↗</div><p style="font-size:12px;line-height:1.6"><b>sound_of_coups</b> 오늘도 수고했어.（今天也辛苦了。）<br><span class="muted">评论已关闭 · 这条动态没有公开发布</span></p></div><div class="card"><h3>草稿箱 · 1</h3><p>“有些幸福想分享给所有人，又想只留给一个人。”</p><button class="pill" onclick="toast('草稿还没有发布')">查看草稿</button></div>');}
+function renderMail(){setScreen('邮件','<div style="font-size:22px;font-weight:800">收件箱</div><div class="list-item" onclick="mailDetail()"><div class="avatar" style="background:#9fc7ff">✉</div><div class="item-main"><div class="item-title">私人行程确认</div><div class="item-preview">请确认下周可调整的休息时间。</div></div><div class="time">昨天</div></div><div class="list-item" onclick="toast('没有新邮件')"><div class="avatar">📄</div><div class="item-main"><div class="item-title">品牌合作日程</div><div class="item-preview">最终时间表已更新。</div></div><div class="time">周四</div></div>');}
+function mailDetail(){setScreen('私人行程确认','<button class="backlink" onclick="renderMail()">‹ 收件箱</button><div class="card"><h3>请确认下周可调整的休息时间</h3><div class="muted">发件人：工作团队 · 昨天 18:06</div><p style="margin-top:14px">请尽早确认可调整的时间段，以便安排个人行程。</p><p style="margin-top:12px">回复草稿：<br>“周日下午请帮我留出来，已经有约了。其他时间可以再协调。”</p></div>');}
+function renderClock(){setScreen('时钟','<div style="font-size:23px;font-weight:800">时钟</div><div class="card"><h3>闹钟　07:30</h3><p>工作日 · 标签：不要赖床</p></div><div class="card"><h3>闹钟　08:30</h3><p>周末 · 标签：如果宝宝来电话就起床</p></div><div class="card"><h3>世界时钟</h3><p>首尔　09:41<br>洛杉矶　17:41（前一天）</p></div><button class="pill" onclick="toast('新增闹钟：给宝宝打电话')">＋ 添加闹钟</button>');}
+function renderSettings(){setScreen('设置','<div style="font-size:23px;font-weight:800;margin-bottom:15px">设置</div><div class="card"><div style="display:flex;align-items:center;gap:12px"><div class="avatar">🍒</div><div><b>崔胜澈</b><div class="muted">Apple ID · S.COUPS</div></div></div></div>'+[['飞行模式','关闭'],['Wi-Fi','已连接'],['蓝牙','已打开'],['专注模式','勿扰 · 23:00—08:00'],['壁纸','一张没有公开的合照'],['隐私与安全','面容 ID 已启用']].map(x=>`<div class="list-item" onclick="toast('${x[0]}：${x[1]}')"><div class="item-main"><div class="item-title">${x[0]}</div></div><div class="time">${x[1]}　›</div></div>`).join('')+'<div class="muted" style="margin-top:20px">本页面为粉丝创作的虚构互动作品，不代表真实设备或个人隐私。</div>');}
+function renderMusic(){setScreen('音乐','<div style="text-align:center;padding:20px 0"><div class="cover" style="width:180px;height:180px;border-radius:25px;margin:auto;font-size:58px">🎧</div><h2 style="margin-bottom:5px">청소</h2><div class="muted">The Ray · 最近播放</div><div style="height:5px;border-radius:8px;background:#3c4050;margin:25px 0 8px"><div style="width:38%;height:5px;border-radius:8px;background:var(--pink)"></div></div><div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted)"><span>1:02</span><span>4:13</span></div><div style="font-size:35px;margin:25px">⏮　<span onclick="toast('播放状态已切换')" style="cursor:pointer">▶</span>　⏭</div></div><div class="card"><h3>最近播放</h3><p>청소 · The Ray<br>Circles · SEVENTEEN<br>우리의 새벽은 낮보다 뜨겁다 · SEVENTEEN</p></div><div class="muted">播放列表备注：某个人说过喜欢这首歌。</div>');}
+function toast(t){$('toast').textContent=t;$('toast').style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>$('toast').style.display='none',2100)}
+function back(){if(current==='chat'){renderChats();return}if(stack.length){let p=stack.pop();if(p==='home')home();else if(p==='kakao')renderChats();else openApp(p)}else home();}
+$('backBtn').onclick=back;$('topAction').onclick=()=>toast(current==='home'?'锁屏壁纸：某个人的背影':'没有更多内容了');$('screen').addEventListener('click',e=>{});
+home();
+function tick(){let d=new Date();$('statusTime').textContent=d.toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit',hour12:false});}
+tick();setInterval(tick,30000);
+</script>
+</body>
+</html>
